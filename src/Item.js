@@ -6,13 +6,13 @@ const ButtonTextWrap = styled.p`
 `
 
 export default function Item(props) {
-    // React.useStateは「値」と「値を更新するための関数」を返す
     const [isDone, setIsDone] = React.useState(false)
-    // const [progress, setProgress] = React.useState(0)
-
-    const toggleIsDone = () => setIsDone(!isDone)
-
     const buttonText = isDone ? '戻す' : '完了'  
+    function toggleIsDone() {
+        setIsDone(!isDone)
+        console.log(isDone)
+    }
+
     return (
         <li>
             <p>{props.content}</p>

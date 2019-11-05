@@ -11,7 +11,7 @@ const AppWrapper = styled.div`
 `
 
 export default function App() {
-    const todos = [
+    const [todos, setTodos] = React.useState([
         {
             id: 0,
             content: "課題を終わらせる"
@@ -20,10 +20,10 @@ export default function App() {
             id: 1,
             content: "蟹食べに行く"
         },
-    ]
+    ])
     return (
         <AppWrapper>
-            <Form></Form>
+            <Form todos={todos} setTodos={setTodos}></Form>
             <List todos={todos}></List>
         </AppWrapper>
     )
