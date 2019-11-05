@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Form from './Form'
+import List from './List'
+// import './App.css'
+import styled from 'styled-components'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const AppWrapper = styled.div`
+    width: 100vw;
+    min-height: 100vh;
+    background-color: gray;
+`
+
+export default function App() {
+    const todos = [
+        {
+            id: 0,
+            content: "課題を終わらせる"
+        },
+        {
+            id: 1,
+            content: "蟹食べに行く"
+        },
+    ]
+    return (
+        <AppWrapper>
+            <Form></Form>
+            <List todos={todos}></List>
+        </AppWrapper>
+    )
 }
-
-export default App;
